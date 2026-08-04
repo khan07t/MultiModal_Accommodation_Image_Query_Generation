@@ -1,0 +1,14 @@
+{
+  "model": "gemini-2.5-flash",
+  "access_method": "API Key",
+  "object": "bathtub",
+  "prompt_set": "baseline",
+  "start_row": 250,
+  "end_row": null,
+  "total_rows": 276,
+  "completed_rows": 276,
+  "unique_images": 209,
+  "total_questions_generated": 1380,
+  "has_blip_comparison": true,
+  "output_file": "dets_bathtub_baseline_with_gemini_questions.csv"
+}

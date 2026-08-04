@@ -1,0 +1,282 @@
+{
+ "info": {
+  "description": "10-image sample of the kettle test split",
+  "images_provided_by": "trivago N.V., reproduced with permission",
+  "annotations": "hand-drawn for evaluation; no model was trained on them",
+  "note": "Images are not covered by this repository's MIT licence. See data/sample/ATTRIBUTION.md."
+ },
+ "licenses": [
+  {
+   "id": 1,
+   "name": "Provided by trivago N.V., all rights reserved",
+   "url": ""
+  }
+ ],
+ "categories": [
+  {
+   "id": 0,
+   "name": "Kettle",
+   "supercategory": "none"
+  },
+  {
+   "id": 1,
+   "name": "kettle",
+   "supercategory": "Kettle"
+  },
+  {
+   "id": 2,
+   "name": "kettle_eval",
+   "supercategory": "Kettle"
+  }
+ ],
+ "images": [
+  {
+   "id": 172,
+   "license": 1,
+   "file_name": "image_100_jpg.rf.38dcc8a16afd17d0443eda4dea186e74.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-12T05:04:46+00:00",
+   "extra": {
+    "user_tags": [
+     "validate"
+    ],
+    "name": "image_100.jpg"
+   }
+  },
+  {
+   "id": 257,
+   "license": 1,
+   "file_name": "image_102_jpg.rf.c3f41f328b1023a6b005362c42de90b5.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-12T05:04:46+00:00",
+   "extra": {
+    "user_tags": [
+     "validate"
+    ],
+    "name": "image_102.jpg"
+   }
+  },
+  {
+   "id": 180,
+   "license": 1,
+   "file_name": "image_104_jpg.rf.1e43a3301d40de88fb1a5911da99b7d8.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-12T05:04:46+00:00",
+   "extra": {
+    "user_tags": [
+     "validate"
+    ],
+    "name": "image_104.jpg"
+   }
+  },
+  {
+   "id": 228,
+   "license": 1,
+   "file_name": "image_106_jpg.rf.8ae484dc31c83d07d9e0b5fcd45383bc.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-12T05:04:46+00:00",
+   "extra": {
+    "user_tags": [
+     "validate"
+    ],
+    "name": "image_106.jpg"
+   }
+  },
+  {
+   "id": 47,
+   "license": 1,
+   "file_name": "image_107_jpg.rf.f689ac9657de913811956d99af2fd195.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-12T05:04:46+00:00",
+   "extra": {
+    "user_tags": [
+     "validate"
+    ],
+    "name": "image_107.jpg"
+   }
+  },
+  {
+   "id": 259,
+   "license": 1,
+   "file_name": "image_108_jpg.rf.d71d96551b693dc1b21bf05385934591.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-12T05:04:46+00:00",
+   "extra": {
+    "user_tags": [
+     "validate"
+    ],
+    "name": "image_108.jpg"
+   }
+  },
+  {
+   "id": 144,
+   "license": 1,
+   "file_name": "image_10_jpg.rf.1b801ed2d6a165f8e0f02613808d0f04.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-12T05:04:46+00:00",
+   "extra": {
+    "user_tags": [
+     "validate"
+    ],
+    "name": "image_10.jpg"
+   }
+  },
+  {
+   "id": 267,
+   "license": 1,
+   "file_name": "image_110_jpg.rf.25f6b377b5db0b06227fbc741d580fd5.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-12T05:04:46+00:00",
+   "extra": {
+    "user_tags": [
+     "validate"
+    ],
+    "name": "image_110.jpg"
+   }
+  },
+  {
+   "id": 111,
+   "license": 1,
+   "file_name": "image_23_fp_jpg.rf.6f0c02ec19e72f4abaa5cf6e212da590.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-12T05:04:46+00:00",
+   "extra": {
+    "name": "image_23_fp.jpg"
+   }
+  },
+  {
+   "id": 140,
+   "license": 1,
+   "file_name": "image_29_fp_jpg.rf.db9098d0a0f718b3b8285a91c1e720e6.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-12T05:04:46+00:00",
+   "extra": {
+    "name": "image_29_fp.jpg"
+   }
+  }
+ ],
+ "annotations": [
+  {
+   "id": 47,
+   "image_id": 47,
+   "category_id": 2,
+   "bbox": [
+    17,
+    197,
+    326.5,
+    292
+   ],
+   "area": 95338,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 144,
+   "image_id": 144,
+   "category_id": 2,
+   "bbox": [
+    357,
+    190,
+    202,
+    365.5
+   ],
+   "area": 73831,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 172,
+   "image_id": 172,
+   "category_id": 2,
+   "bbox": [
+    52,
+    95,
+    568,
+    481.5
+   ],
+   "area": 273492,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 180,
+   "image_id": 180,
+   "category_id": 2,
+   "bbox": [
+    29,
+    267,
+    302,
+    274
+   ],
+   "area": 82748,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 228,
+   "image_id": 228,
+   "category_id": 2,
+   "bbox": [
+    228,
+    5,
+    304.5,
+    460.5
+   ],
+   "area": 140222.25,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 257,
+   "image_id": 257,
+   "category_id": 2,
+   "bbox": [
+    31,
+    175,
+    247.5,
+    403.5
+   ],
+   "area": 99866.25,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 259,
+   "image_id": 259,
+   "category_id": 2,
+   "bbox": [
+    0,
+    222,
+    414.5,
+    417.5
+   ],
+   "area": 173053.75,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 267,
+   "image_id": 267,
+   "category_id": 2,
+   "bbox": [
+    18,
+    85,
+    620,
+    470
+   ],
+   "area": 291400,
+   "segmentation": [],
+   "iscrowd": 0
+  }
+ ]
+}

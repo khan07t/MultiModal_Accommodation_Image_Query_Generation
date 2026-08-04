@@ -1,0 +1,23 @@
+# Optional. Only needed to *run* or rebuild the notebooks locally.
+#
+# The four notebooks in notebooks/ are committed with their outputs and render
+# on GitHub as-is, so nothing here is required to read them.
+#
+# Windows note: `jupyterlab` unpacks extension files whose paths exceed the
+# 260-character limit and will fail with "No such file or directory" unless
+# long-path support is enabled:
+#     https://pip.pypa.io/warnings/enable-long-paths
+# VS Code renders notebooks using ipykernel alone, so on Windows the simplest
+# path is to skip jupyterlab and open the .ipynb files in VS Code instead:
+#     pip install nbformat nbclient ipykernel
+
+-r requirements.txt
+
+# nbformat reads and writes .ipynb; nbclient executes them; ipykernel is the
+# kernel they execute against. scripts/build_notebooks.py needs all three.
+nbformat>=5.9,<6.0
+nbclient>=0.9,<1.0
+ipykernel>=6.29,<7.0
+
+# Full browser-based JupyterLab. Omit on Windows unless long paths are enabled.
+jupyterlab>=4.0,<5.0

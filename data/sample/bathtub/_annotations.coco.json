@@ -1,0 +1,258 @@
+{
+ "info": {
+  "description": "10-image sample of the bathtub test split",
+  "images_provided_by": "trivago N.V., reproduced with permission",
+  "annotations": "hand-drawn for evaluation; no model was trained on them",
+  "note": "Images are not covered by this repository's MIT licence. See data/sample/ATTRIBUTION.md."
+ },
+ "licenses": [
+  {
+   "id": 1,
+   "name": "Provided by trivago N.V., all rights reserved",
+   "url": ""
+  }
+ ],
+ "categories": [
+  {
+   "id": 0,
+   "name": "Bathub-Bathtub-Object",
+   "supercategory": "none"
+  },
+  {
+   "id": 1,
+   "name": "bathtub",
+   "supercategory": "Bathub-Bathtub-Object"
+  },
+  {
+   "id": 2,
+   "name": "bathtub_eval",
+   "supercategory": "Bathub-Bathtub-Object"
+  }
+ ],
+ "images": [
+  {
+   "id": 135,
+   "license": 1,
+   "file_name": "image_100_jpg.rf.6feee3ceca4b6005b98b7047fefb2ab9.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-19T22:33:01+00:00",
+   "extra": {
+    "name": "image_100.jpg"
+   }
+  },
+  {
+   "id": 49,
+   "license": 1,
+   "file_name": "image_101_jpg.rf.e93a0eb31dea15d1fda213a8e42ff961.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-19T22:33:01+00:00",
+   "extra": {
+    "name": "image_101.jpg"
+   }
+  },
+  {
+   "id": 82,
+   "license": 1,
+   "file_name": "image_102_jpg.rf.b797e974f793bcbca5b9151cf2f4dfdc.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-19T22:33:01+00:00",
+   "extra": {
+    "name": "image_102.jpg"
+   }
+  },
+  {
+   "id": 274,
+   "license": 1,
+   "file_name": "image_103_jpg.rf.5a2a13dfadaafe7d7ea69a1ef4687768.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-19T22:33:01+00:00",
+   "extra": {
+    "name": "image_103.jpg"
+   }
+  },
+  {
+   "id": 193,
+   "license": 1,
+   "file_name": "image_104_jpg.rf.76463ed37df28a5bff4a1390233fe8ad.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-19T22:33:01+00:00",
+   "extra": {
+    "name": "image_104.jpg"
+   }
+  },
+  {
+   "id": 11,
+   "license": 1,
+   "file_name": "image_106_jpg.rf.e25bdeb6e8ad8bc2c8873c4a044711d0.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-19T22:33:01+00:00",
+   "extra": {
+    "name": "image_106.jpg"
+   }
+  },
+  {
+   "id": 3,
+   "license": 1,
+   "file_name": "image_107_jpg.rf.af5e3a5945f12270da1104b704bdc995.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-19T22:33:01+00:00",
+   "extra": {
+    "name": "image_107.jpg"
+   }
+  },
+  {
+   "id": 239,
+   "license": 1,
+   "file_name": "image_109_jpg.rf.d427e4824b1aa2dcffb4a78bdeaaaed1.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-19T22:33:01+00:00",
+   "extra": {
+    "name": "image_109.jpg"
+   }
+  },
+  {
+   "id": 213,
+   "license": 1,
+   "file_name": "image_201_jpg.rf.7c05f1bb350fd223bdf88ab5f410e9c5.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-19T22:33:01+00:00",
+   "extra": {
+    "name": "image_201.jpg"
+   }
+  },
+  {
+   "id": 238,
+   "license": 1,
+   "file_name": "image_234_fp_jpg.rf.13eab136a6b38fa01a9c28c31d6e56e7.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-19T22:33:01+00:00",
+   "extra": {
+    "name": "image_234_fp.jpg"
+   }
+  }
+ ],
+ "annotations": [
+  {
+   "id": 4,
+   "image_id": 3,
+   "category_id": 2,
+   "bbox": [
+    335,
+    390,
+    300,
+    234.5
+   ],
+   "area": 70350,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 12,
+   "image_id": 11,
+   "category_id": 2,
+   "bbox": [
+    252,
+    339,
+    338,
+    301
+   ],
+   "area": 101738,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 50,
+   "image_id": 49,
+   "category_id": 2,
+   "bbox": [
+    330,
+    406,
+    304,
+    234
+   ],
+   "area": 71136,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 83,
+   "image_id": 82,
+   "category_id": 2,
+   "bbox": [
+    295,
+    434,
+    345,
+    206
+   ],
+   "area": 71070,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 136,
+   "image_id": 135,
+   "category_id": 2,
+   "bbox": [
+    404,
+    350,
+    236,
+    290
+   ],
+   "area": 68440,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 194,
+   "image_id": 193,
+   "category_id": 2,
+   "bbox": [
+    319,
+    448,
+    321,
+    188
+   ],
+   "area": 60348,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 240,
+   "image_id": 239,
+   "category_id": 2,
+   "bbox": [
+    152,
+    323,
+    308,
+    272
+   ],
+   "area": 83776,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 277,
+   "image_id": 274,
+   "category_id": 2,
+   "bbox": [
+    422,
+    135,
+    217.5,
+    504.5
+   ],
+   "area": 109728.75,
+   "segmentation": [],
+   "iscrowd": 0
+  }
+ ]
+}

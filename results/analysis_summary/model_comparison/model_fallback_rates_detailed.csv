@@ -1,0 +1,16 @@
+Amenity,Model,Total Questions,Fallbacks,Fallback Rate (%)
+Bathtub,Gemini 2.5 Flash,1380,214,15.51
+Bathtub,Gemini 2.5 Pro,1380,171,12.39
+Bathtub,Gemini 3.0 Pro,1380,156,11.3
+Tv,Gemini 2.5 Flash,1335,18,1.35
+Tv,Gemini 2.5 Pro,1335,14,1.05
+Tv,Gemini 3.0 Pro,1335,9,0.67
+Hairdryer,Gemini 2.5 Flash,1005,21,2.09
+Hairdryer,Gemini 2.5 Pro,1005,38,3.78
+Hairdryer,Gemini 3.0 Pro,1005,26,2.59
+Mirror,Gemini 2.5 Flash,3135,440,14.04
+Mirror,Gemini 2.5 Pro,3135,516,16.46
+Mirror,Gemini 3.0 Pro,3135,341,10.88
+Kettle,Gemini 2.5 Flash,915,40,4.37
+Kettle,Gemini 2.5 Pro,915,41,4.48
+Kettle,Gemini 3.0 Pro,915,78,8.52

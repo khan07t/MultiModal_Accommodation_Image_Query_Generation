@@ -1,0 +1,16 @@
+model,amenity,bertscore
+Gemini 2.5 Flash,bathtub,0.705
+Gemini 2.5 Flash,tv,0.686
+Gemini 2.5 Flash,kettle,0.704
+Gemini 2.5 Flash,hairdryer,0.717
+Gemini 2.5 Flash,mirror,0.686
+Gemini 2.5 Pro,bathtub,0.708
+Gemini 2.5 Pro,tv,0.678
+Gemini 2.5 Pro,kettle,0.707
+Gemini 2.5 Pro,hairdryer,0.684
+Gemini 2.5 Pro,mirror,0.696
+Gemini 3.0 Pro Preview,bathtub,0.719
+Gemini 3.0 Pro Preview,tv,0.697
+Gemini 3.0 Pro Preview,kettle,0.728
+Gemini 3.0 Pro Preview,hairdryer,0.694
+Gemini 3.0 Pro Preview,mirror,0.698

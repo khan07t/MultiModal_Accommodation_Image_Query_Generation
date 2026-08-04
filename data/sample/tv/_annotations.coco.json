@@ -1,0 +1,314 @@
+{
+ "info": {
+  "description": "8-image sample of the tv test split",
+  "images_provided_by": "trivago N.V., reproduced with permission",
+  "annotations": "hand-drawn for evaluation; no model was trained on them",
+  "note": "Images are not covered by this repository's MIT licence. See data/sample/ATTRIBUTION.md."
+ },
+ "licenses": [
+  {
+   "id": 1,
+   "name": "Provided by trivago N.V., all rights reserved",
+   "url": ""
+  }
+ ],
+ "categories": [
+  {
+   "id": 0,
+   "name": "television-objects-Tivi",
+   "supercategory": "none"
+  },
+  {
+   "id": 1,
+   "name": "TV",
+   "supercategory": "television-objects-Tivi"
+  },
+  {
+   "id": 3,
+   "name": "tv_eval",
+   "supercategory": "television-objects-Tivi"
+  }
+ ],
+ "images": [
+  {
+   "id": 349,
+   "license": 1,
+   "file_name": "4602a856-e321-4eaf-b4f5-c4d08b7158d6_jpeg.rf.a28e037b3fedde6dc4d7c3eceaa51225.jpg",
+   "height": 480,
+   "width": 640,
+   "date_captured": "2025-12-08T03:30:34+00:00",
+   "extra": {
+    "name": "4602a856-e321-4eaf-b4f5-c4d08b7158d6.jpeg"
+   }
+  },
+  {
+   "id": 257,
+   "license": 1,
+   "file_name": "62ec600b3a4dd_jpg.rf.957d17ef8b8c20d790e175b6c1643288.jpg",
+   "height": 480,
+   "width": 640,
+   "date_captured": "2025-12-08T03:30:34+00:00",
+   "extra": {
+    "name": "62ec600b3a4dd.jpg"
+   }
+  },
+  {
+   "id": 281,
+   "license": 1,
+   "file_name": "FLBefore00064_jpg.rf.32f13de47bcc38ec90cf1145380d2c56.jpg",
+   "height": 480,
+   "width": 640,
+   "date_captured": "2025-12-08T03:30:34+00:00",
+   "extra": {
+    "name": "FLBefore00064.jpg"
+   }
+  },
+  {
+   "id": 343,
+   "license": 1,
+   "file_name": "LED_TV_24__LG_24MT48AF_Monitor_TV___USB_port_HDMI___LCD_TV_2_jpg.rf.a0b46d3e8a68b350d6910f36902a5ae9.jpg",
+   "height": 480,
+   "width": 640,
+   "date_captured": "2025-12-08T03:30:34+00:00",
+   "extra": {
+    "name": "LED_TV_24__LG_24MT48AF_Monitor_TV___USB_port_HDMI___LCD_TV_2.jpg"
+   }
+  },
+  {
+   "id": 197,
+   "license": 1,
+   "file_name": "a-blank-billboard-is-shown-on-a-road_1340-32410_jpg.rf.70ce7e39ab76f67e9a86463fbe267a5e.jpg",
+   "height": 480,
+   "width": 640,
+   "date_captured": "2025-12-08T03:30:34+00:00",
+   "extra": {
+    "name": "a-blank-billboard-is-shown-on-a-road_1340-32410.jpg"
+   }
+  },
+  {
+   "id": 85,
+   "license": 1,
+   "file_name": "a-blank-billboard-is-shown-on-a-road_1340-32410_jpg.rf.902b478ba459a50c9f165308c2af1e76.jpg",
+   "height": 480,
+   "width": 640,
+   "date_captured": "2025-12-08T03:30:34+00:00",
+   "extra": {
+    "name": "a-blank-billboard-is-shown-on-a-road_1340-32410.jpg"
+   }
+  },
+  {
+   "id": 339,
+   "license": 1,
+   "file_name": "cedefed3-6e9a-4e1f-80c4-eec2a9b5a6a2_jpeg.rf.8755644478abb73648b95c29a6f57091.jpg",
+   "height": 480,
+   "width": 640,
+   "date_captured": "2025-12-08T03:30:34+00:00",
+   "extra": {
+    "name": "cedefed3-6e9a-4e1f-80c4-eec2a9b5a6a2.jpeg"
+   }
+  },
+  {
+   "id": 214,
+   "license": 1,
+   "file_name": "image_100_jpg.rf.f67a2ff845c9d0ef4cc1bc7da634a05e.jpg",
+   "height": 480,
+   "width": 640,
+   "date_captured": "2025-12-08T03:30:34+00:00",
+   "extra": {
+    "name": "image_100.jpg"
+   }
+  }
+ ],
+ "annotations": [
+  {
+   "id": 87,
+   "image_id": 85,
+   "category_id": 1,
+   "bbox": [
+    58,
+    66,
+    524.5,
+    260
+   ],
+   "area": 136370,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 200,
+   "image_id": 197,
+   "category_id": 1,
+   "bbox": [
+    58,
+    66,
+    524.5,
+    260
+   ],
+   "area": 136370,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 217,
+   "image_id": 214,
+   "category_id": 3,
+   "bbox": [
+    384,
+    186,
+    76.833,
+    57.353
+   ],
+   "area": 4406.591,
+   "segmentation": [
+    [
+     385.833,
+     242.155,
+     386.667,
+     243.093,
+     397.833,
+     243.28,
+     445.167,
+     240.469,
+     457,
+     240.469,
+     460.667,
+     239.344,
+     458.167,
+     195.111,
+     456.667,
+     186.115,
+     454.333,
+     185.927,
+     428.333,
+     191.738,
+     389.667,
+     199.047,
+     384.833,
+     200.734,
+     384,
+     202.608,
+     383.833,
+     210.855,
+     385,
+     220.789,
+     385.5,
+     237.657,
+     385.833,
+     242.155
+    ]
+   ],
+   "iscrowd": 0
+  },
+  {
+   "id": 261,
+   "image_id": 257,
+   "category_id": 1,
+   "bbox": [
+    150,
+    11,
+    459,
+    353.5
+   ],
+   "area": 162256.5,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 286,
+   "image_id": 281,
+   "category_id": 1,
+   "bbox": [
+    37,
+    100,
+    557.059,
+    204.873
+   ],
+   "area": 114126.447,
+   "segmentation": [
+    [
+     37.333,
+     100,
+     88.084,
+     304.873,
+     594.393,
+     260.078,
+     592.279,
+     101.333,
+     37.333,
+     100
+    ]
+   ],
+   "iscrowd": 0
+  },
+  {
+   "id": 345,
+   "image_id": 339,
+   "category_id": 1,
+   "bbox": [
+    228,
+    2,
+    233.652,
+    159.466
+   ],
+   "area": 37259.555,
+   "segmentation": [
+    [
+     459.238,
+     160.966,
+     461.254,
+     15.053,
+     236,
+     1.5,
+     234.672,
+     126.24,
+     227.602,
+     127.743,
+     459.238,
+     160.966
+    ]
+   ],
+   "iscrowd": 0
+  },
+  {
+   "id": 349,
+   "image_id": 343,
+   "category_id": 1,
+   "bbox": [
+    20,
+    22,
+    601.5,
+    438
+   ],
+   "area": 263457,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 355,
+   "image_id": 349,
+   "category_id": 1,
+   "bbox": [
+    175,
+    242,
+    91.689,
+    66.325
+   ],
+   "area": 6081.245,
+   "segmentation": [
+    [
+     266.801,
+     241.6,
+     175.112,
+     244,
+     175.697,
+     307.925,
+     264.221,
+     293.503,
+     266.801,
+     241.6
+    ]
+   ],
+   "iscrowd": 0
+  }
+ ]
+}

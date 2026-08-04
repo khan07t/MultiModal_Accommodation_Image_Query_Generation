@@ -1,0 +1,299 @@
+{
+ "info": {
+  "description": "10-image sample of the hairdryer test split",
+  "images_provided_by": "trivago N.V., reproduced with permission",
+  "annotations": "hand-drawn for evaluation; no model was trained on them",
+  "note": "Images are not covered by this repository's MIT licence. See data/sample/ATTRIBUTION.md."
+ },
+ "licenses": [
+  {
+   "id": 1,
+   "name": "Provided by trivago N.V., all rights reserved",
+   "url": ""
+  }
+ ],
+ "categories": [
+  {
+   "id": 0,
+   "name": "hair-dryer",
+   "supercategory": "none"
+  },
+  {
+   "id": 1,
+   "name": "hair dryer",
+   "supercategory": "hair-dryer"
+  },
+  {
+   "id": 2,
+   "name": "hairdryer_eval",
+   "supercategory": "hair-dryer"
+  }
+ ],
+ "images": [
+  {
+   "id": 220,
+   "license": 1,
+   "file_name": "image_100_jpg.rf.e63c16b99068114bc9cf4812d5ad027c.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-17T02:43:39+00:00",
+   "extra": {
+    "user_tags": [
+     "eval"
+    ],
+    "name": "image_100.jpg"
+   }
+  },
+  {
+   "id": 135,
+   "license": 1,
+   "file_name": "image_101_jpg.rf.b66c79c540c6228f27ca3207e1ea611f.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-17T02:43:39+00:00",
+   "extra": {
+    "user_tags": [
+     "eval"
+    ],
+    "name": "image_101.jpg"
+   }
+  },
+  {
+   "id": 177,
+   "license": 1,
+   "file_name": "image_102_jpg.rf.e3ff3ffec13f854b65223d728912a53d.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-17T02:43:39+00:00",
+   "extra": {
+    "user_tags": [
+     "eval"
+    ],
+    "name": "image_102.jpg"
+   }
+  },
+  {
+   "id": 238,
+   "license": 1,
+   "file_name": "image_105_jpg.rf.64f144f4633e51e97c7a2e11265a3221.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-17T02:43:39+00:00",
+   "extra": {
+    "user_tags": [
+     "eval"
+    ],
+    "name": "image_105.jpg"
+   }
+  },
+  {
+   "id": 248,
+   "license": 1,
+   "file_name": "image_107_jpg.rf.c3a5ee791b360e0e11b5be86d3a89454.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-17T02:43:39+00:00",
+   "extra": {
+    "user_tags": [
+     "eval"
+    ],
+    "name": "image_107.jpg"
+   }
+  },
+  {
+   "id": 44,
+   "license": 1,
+   "file_name": "image_108_jpg.rf.737e2cf438196c741d4a9d69b8496da8.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-17T02:43:39+00:00",
+   "extra": {
+    "user_tags": [
+     "eval"
+    ],
+    "name": "image_108.jpg"
+   }
+  },
+  {
+   "id": 83,
+   "license": 1,
+   "file_name": "image_10_jpg.rf.6e74427b18cf4da25292eb8dc9f1ad8b.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-17T02:43:39+00:00",
+   "extra": {
+    "user_tags": [
+     "eval"
+    ],
+    "name": "image_10.jpg"
+   }
+  },
+  {
+   "id": 136,
+   "license": 1,
+   "file_name": "image_110_jpg.rf.c266e05379a7b351ff487f6635b952d6.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-17T02:43:39+00:00",
+   "extra": {
+    "user_tags": [
+     "eval"
+    ],
+    "name": "image_110.jpg"
+   }
+  },
+  {
+   "id": 269,
+   "license": 1,
+   "file_name": "image_261_fp_jpg.rf.11b12123acd5b5d8b3bc6b5794108202.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-17T02:43:39+00:00",
+   "extra": {
+    "user_tags": [
+     "validate"
+    ],
+    "name": "image_261_fp.jpg"
+   }
+  },
+  {
+   "id": 61,
+   "license": 1,
+   "file_name": "image_266_fp_jpg.rf.995760b59cf42bdb91c4af0f2abfdaa8.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-10-17T02:43:39+00:00",
+   "extra": {
+    "name": "image_266_fp.jpg"
+   }
+  }
+ ],
+ "annotations": [
+  {
+   "id": 46,
+   "image_id": 44,
+   "category_id": 2,
+   "bbox": [
+    88,
+    192,
+    388,
+    448
+   ],
+   "area": 173824,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 85,
+   "image_id": 83,
+   "category_id": 2,
+   "bbox": [
+    88,
+    96,
+    458.5,
+    429
+   ],
+   "area": 196696.5,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 139,
+   "image_id": 135,
+   "category_id": 2,
+   "bbox": [
+    0,
+    77,
+    640,
+    506
+   ],
+   "area": 323840,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 140,
+   "image_id": 136,
+   "category_id": 2,
+   "bbox": [
+    14,
+    89,
+    626,
+    551
+   ],
+   "area": 344926,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 182,
+   "image_id": 177,
+   "category_id": 2,
+   "bbox": [
+    90,
+    99,
+    550,
+    541
+   ],
+   "area": 297550,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 225,
+   "image_id": 220,
+   "category_id": 2,
+   "bbox": [
+    38,
+    37,
+    595.5,
+    588.5
+   ],
+   "area": 350451.75,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 243,
+   "image_id": 238,
+   "category_id": 2,
+   "bbox": [
+    302,
+    190,
+    306,
+    376
+   ],
+   "area": 115056,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 253,
+   "image_id": 248,
+   "category_id": 2,
+   "bbox": [
+    70,
+    284,
+    264,
+    322
+   ],
+   "area": 85008,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 254,
+   "image_id": 248,
+   "category_id": 2,
+   "bbox": [
+    263,
+    164,
+    242.5,
+    283.5
+   ],
+   "area": 68748.75,
+   "segmentation": [],
+   "iscrowd": 0
+  }
+ ]
+}

@@ -1,0 +1,250 @@
+{
+ "info": {
+  "description": "8-image sample of the mirror test split",
+  "images_provided_by": "trivago N.V., reproduced with permission",
+  "annotations": "hand-drawn for evaluation; no model was trained on them",
+  "note": "Images are not covered by this repository's MIT licence. See data/sample/ATTRIBUTION.md."
+ },
+ "licenses": [
+  {
+   "id": 1,
+   "name": "Provided by trivago N.V., all rights reserved",
+   "url": ""
+  }
+ ],
+ "categories": [
+  {
+   "id": 0,
+   "name": "Mirror-mirror",
+   "supercategory": "none"
+  },
+  {
+   "id": 1,
+   "name": "mirror",
+   "supercategory": "Mirror-mirror"
+  },
+  {
+   "id": 2,
+   "name": "mirror_eval",
+   "supercategory": "Mirror-mirror"
+  }
+ ],
+ "images": [
+  {
+   "id": 69,
+   "license": 1,
+   "file_name": "image_10_jpg.rf.bbc7a29849eff29343a718a01f749d57.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-12-08T01:18:18+00:00",
+   "extra": {
+    "name": "image_10.jpg"
+   }
+  },
+  {
+   "id": 42,
+   "license": 1,
+   "file_name": "image_110_jpg.rf.03ca2c6a0464eea913da755c1223ffda.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-12-08T01:18:18+00:00",
+   "extra": {
+    "name": "image_110.jpg"
+   }
+  },
+  {
+   "id": 44,
+   "license": 1,
+   "file_name": "image_111_jpg.rf.070571d3586f5fcab68762aa53d93558.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-12-08T01:18:18+00:00",
+   "extra": {
+    "name": "image_111.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "license": 1,
+   "file_name": "image_114_jpg.rf.518343caea84887259cea3d8eee11a21.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-12-08T01:18:18+00:00",
+   "extra": {
+    "name": "image_114.jpg"
+   }
+  },
+  {
+   "id": 97,
+   "license": 1,
+   "file_name": "image_115_jpg.rf.3b791207d3edf294474bc28d95f7edd2.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-12-08T01:18:18+00:00",
+   "extra": {
+    "name": "image_115.jpg"
+   }
+  },
+  {
+   "id": 234,
+   "license": 1,
+   "file_name": "image_116_jpg.rf.92631eb5707ae2832e578291a1735406.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-12-08T01:18:18+00:00",
+   "extra": {
+    "name": "image_116.jpg"
+   }
+  },
+  {
+   "id": 231,
+   "license": 1,
+   "file_name": "image_117_jpg.rf.b2de23c7f82b0fdbc33d0affc4beb5fd.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-12-08T01:18:18+00:00",
+   "extra": {
+    "name": "image_117.jpg"
+   }
+  },
+  {
+   "id": 256,
+   "license": 1,
+   "file_name": "image_118_jpg.rf.4efa5830a77adb53ece8e2f80e2b399c.jpg",
+   "height": 640,
+   "width": 640,
+   "date_captured": "2025-12-08T01:18:18+00:00",
+   "extra": {
+    "name": "image_118.jpg"
+   }
+  }
+ ],
+ "annotations": [
+  {
+   "id": 7,
+   "image_id": 6,
+   "category_id": 2,
+   "bbox": [
+    462,
+    76,
+    167.5,
+    525.5
+   ],
+   "area": 88021.25,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 50,
+   "image_id": 42,
+   "category_id": 2,
+   "bbox": [
+    484,
+    101,
+    156,
+    234
+   ],
+   "area": 36504,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 52,
+   "image_id": 44,
+   "category_id": 2,
+   "bbox": [
+    0,
+    0,
+    265,
+    256.5
+   ],
+   "area": 67972.5,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 79,
+   "image_id": 69,
+   "category_id": 2,
+   "bbox": [
+    373,
+    51,
+    107,
+    314
+   ],
+   "area": 33598,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 112,
+   "image_id": 97,
+   "category_id": 2,
+   "bbox": [
+    8,
+    39,
+    275,
+    272.5
+   ],
+   "area": 74937.5,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 272,
+   "image_id": 231,
+   "category_id": 2,
+   "bbox": [
+    120,
+    0,
+    173.5,
+    357
+   ],
+   "area": 61939.5,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 275,
+   "image_id": 234,
+   "category_id": 2,
+   "bbox": [
+    225,
+    111,
+    157,
+    208
+   ],
+   "area": 32656,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 297,
+   "image_id": 256,
+   "category_id": 2,
+   "bbox": [
+    297,
+    63,
+    101,
+    315
+   ],
+   "area": 31815,
+   "segmentation": [],
+   "iscrowd": 0
+  },
+  {
+   "id": 298,
+   "image_id": 256,
+   "category_id": 2,
+   "bbox": [
+    167,
+    83,
+    90.5,
+    273
+   ],
+   "area": 24706.5,
+   "segmentation": [],
+   "iscrowd": 0
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  # The README promises the published tables reproduce with "no GPU, no dataset
+  # download". This job holds that promise honest by never installing torch at
+  # all: if a module-level torch import creeps back into src/detection/metrics.py,
+  # this fails while the full job below still passes.
+  reproduce-without-torch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install pandas only
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas pyyaml tabulate
+
+      - name: Confirm the heavy dependencies really are absent
+        run: |
+          python - <<'EOF'
+          import importlib.util, sys
+          # matplotlib counts too: reading `--help` or regenerating a table should
+          # not require a plotting library any more than it requires a GPU.
+          present = [m for m in ("torch", "torchvision", "matplotlib")
+                     if importlib.util.find_spec(m) is not None]
+          if present:
+              sys.exit(f"{', '.join(present)} installed; this job must run without them")
+          print("torch, torchvision and matplotlib all absent, as intended")
+          EOF
+
+      - name: Reproduce the published tables
+        run: |
+          python scripts/build_results_table.py
+          python scripts/build_finding3_table.py
+
+      - name: Confirm the detection CLI is usable without torch
+        run: python -m src.detection.run_detection --help
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install pandas pyyaml pytest tabulate
+
+      - name: Run tests
+        run: pytest tests/ -q

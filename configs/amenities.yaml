@@ -1,0 +1,97 @@
+# Per-amenity configuration for the detection pipeline.
+#
+# Every amenity in the thesis used the same code path; only the prompt sets and
+# the dataset slug changed. Those differences live here so that
+# `src/detection/run_detection.py` stays a single implementation.
+
+defaults:
+  model_name: google/owlvit-base-patch16
+  # Low model-side threshold so the sweep below can explore the full range
+  # without re-running inference.
+  inference_threshold: 0.05
+  conf_sweep: [0.05, 0.15, 0.25, 0.35, 0.45]
+  neg_conf_sweep: [0.05, 0.15, 0.25, 0.35, 0.45]
+  eval_iou_threshold: 0.50
+
+amenities:
+
+  bathtub:
+    display_name: Bathtub
+    dataset_slug: bathtub
+    prompt_sets:
+      baseline: ["bathtub"]
+      long: ["white ceramic bathtub in hotel bathroom, rectangular or oval-shaped"]
+      variants:
+        - "bathtub"
+        - "white bathtub"
+        - "ceramic bathtub"
+        - "built-in bathtub"
+        - "freestanding bathtub"
+        - "hotel bathtub"
+        - "bathtub with shower"
+        - "shower-over-bathtub"
+        - "jacuzzi bathtub"
+
+  hairdryer:
+    display_name: Hairdryer
+    dataset_slug: hairdryer
+    prompt_sets:
+      baseline: ["hairdryer"]
+      long: ["wall-mounted hotel hairdryer with coiled cord in a bathroom"]
+      variants:
+        - "hairdryer"
+        - "hair dryer"
+        - "blow dryer"
+        - "wall-mounted hairdryer"
+        - "handheld hair dryer"
+        - "hotel hairdryer"
+
+  kettle:
+    display_name: Kettle
+    dataset_slug: kettle
+    prompt_sets:
+      baseline: ["kettle"]
+      electric: ["electric kettle"]
+      rich_phrase:
+        - "tea kettle"
+        - "water kettle"
+        - "electric kettle"
+      variants:
+        - "kettle"
+        - "electric kettle"
+        - "stainless steel kettle"
+        - "glass kettle"
+        - "cordless kettle"
+        - "hotel room kettle"
+
+  mirror:
+    display_name: Mirror
+    dataset_slug: mirror
+    prompt_sets:
+      baseline: ["mirror"]
+      long: ["large rectangular bathroom mirror mounted above a vanity"]
+      hybrid:
+        - "mirror"
+        - "wall mirror"
+        - "bathroom mirror"
+      variants:
+        - "mirror"
+        - "wall mirror"
+        - "bathroom mirror"
+        - "vanity mirror"
+        - "backlit mirror"
+        - "framed mirror"
+
+  tv:
+    display_name: TV
+    dataset_slug: tv
+    prompt_sets:
+      baseline: ["tv"]
+      long: ["flat-screen television mounted on a hotel room wall"]
+      variants:
+        - "tv"
+        - "television"
+        - "television set"
+        - "flat screen tv"
+        - "wall-mounted tv"
+        - "hotel room television"

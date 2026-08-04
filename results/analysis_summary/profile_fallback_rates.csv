@@ -1,0 +1,16 @@
+Amenity,Profile,Total,Fallbacks,Rate (%)
+Bathtub,Single,828,27,3.26
+Bathtub,Couple,828,10,1.21
+Bathtub,Group,828,41,4.95
+Tv,Single,801,11,1.37
+Tv,Couple,801,7,0.87
+Tv,Group,801,12,1.5
+Hairdryer,Single,603,2,0.33
+Hairdryer,Couple,603,4,0.66
+Hairdryer,Group,603,17,2.82
+Mirror,Single,1872,19,1.01
+Mirror,Couple,1872,34,1.82
+Mirror,Group,1872,28,1.5
+Kettle,Single,549,26,4.74
+Kettle,Couple,549,8,1.46
+Kettle,Group,549,0,0.0

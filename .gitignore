@@ -1,0 +1,58 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*.so
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Testing / linting
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local output from a sample-scale re-score. The README suggests writing these
+# to a scratch directory; ignore them here too in case anyone points --out-root
+# back inside the repository.
+sample-run/
+/tmp-run/
+
+# Datasets, models, large local artifacts.
+# data/ is ignored except data/sample/, the 46-image slice the notebooks run on.
+# Note `data/*` rather than `data/`: git will not re-include a path inside an
+# excluded directory, so the directory itself must stay un-excluded.
+data/*
+!data/sample/
+datasets/
+downloaded_images/
+models/
+checkpoints/
+*.zip
+*.tar
+*.tar.gz
+
+# Secrets: never commit API keys
+.env
+.env.*
+*.key
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
