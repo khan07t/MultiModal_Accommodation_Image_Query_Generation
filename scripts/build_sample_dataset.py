@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -46,6 +47,18 @@ SOURCE_DIRS = {
 N_POSITIVE = 8
 N_NEGATIVE = 2
 
+# A small number of images in the TV split are public stock or AI-generated
+# photographs rather than trivago listings: product shots, outdoor billboards and
+# similar. They are fine to evaluate against, but redistributing them here would
+# mean shipping third-party images whose licence we cannot establish, and would
+# make the attribution file wrong. They are excluded from the committed sample,
+# so everything under data/sample/ is trivago's and covered by their permission.
+STOCK_NAME_PATTERN = re.compile(
+    r"(shutterstock|istock|freepik|getty|depositphotos|alamy"
+    r"|billboard|-is-shown-|generative-ai|LED_TV|_\d{3,}-\d{3,})",
+    re.IGNORECASE,
+)
+
 # Windows refuses paths over 260 characters by default. A few source images carry
 # very long descriptive names (one is 237 characters), and committing those would
 # make `git clone` fail for anyone whose checkout directory is more than a couple
@@ -62,7 +75,9 @@ def select(coco: dict, detected: set[str]) -> list[dict]:
     images = sorted(coco["images"], key=lambda i: i["file_name"])
     usable = [
         i for i in images
-        if i["file_name"] in detected and len(i["file_name"]) <= MAX_FILENAME
+        if i["file_name"] in detected
+        and len(i["file_name"]) <= MAX_FILENAME
+        and not STOCK_NAME_PATTERN.search(i["file_name"])
     ]
 
     positives = [i for i in usable if i["id"] in annotated][:N_POSITIVE]

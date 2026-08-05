@@ -11,8 +11,7 @@ decision-relevant question.
 
 Evaluated on 1,531 test images, seven generation backends, and a 37-participant
 user study. The images are **real accommodation listing photographs provided by
-trivago N.V.**, hand-annotated for evaluation, with a small number of public
-stock images in the TV set.
+trivago N.V.**, hand-annotated for evaluation.
 
 ![Pipeline architecture](docs/architecture/pipeline.png)
 
@@ -23,6 +22,8 @@ running anything.
 
 **In a hurry?** The [defence presentation](docs/thesis_presentation.pdf)
 (31 slides) covers the whole project visually and previews directly in GitHub.
+Its detection charts predate the current scoring, so the README table above is
+the one to go by.
 
 <sub>**Scope.** This repository is a walkthrough of the method and its results,
 not the production system. The full-scale runs used the industry collaborator's
@@ -101,9 +102,14 @@ it cannot see that it is the *same* question 592 times. Any evaluation of
 generated questions needs a diversity term or it will report success here.
 
 They miss relevance too. Neither metric checks that a question is about the
-amenity that was detected, and 5.8% of the kettle questions mention baths, tubs
-or showers. Diversity catches repetition, not drift, so a complete evaluation
-needs a third term for on-topic-ness that this project does not have.
+amenity that was detected. Measuring that directly: **5.5% of generated questions
+reference a different amenity than the one detected**, rising to 10.0% on kettle
+and 15.4% on hairdryer. One kettle detection produced *"Can I easily reach
+everything I need while bathing alone?"* Diversity catches repetition, not drift,
+so a complete evaluation needs a third term for on-topic-ness that this project
+does not have.
+
+<sub>Computed, not estimated: `python scripts/audit_question_relevance.py`</sub>
 
 The vision comparison is size-matched: distinct-n falls as a corpus grows, so the
 2,484 vision questions are subsampled to 1,003 to match the text-only row count,
@@ -207,7 +213,8 @@ cd MultiModal_Accommodation_Image_Query_Generation
 pip install -r requirements.txt
 ```
 
-Reproduce both published tables. No GPU, no dataset download, pandas only:
+Reproduce both published tables. No GPU, no dataset download, no deep-learning
+stack (pandas, PyYAML and tabulate only):
 
 ```bash
 python scripts/build_results_table.py     # detection table

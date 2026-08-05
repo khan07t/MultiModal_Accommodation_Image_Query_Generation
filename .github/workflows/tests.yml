@@ -42,6 +42,7 @@ jobs:
         run: |
           python scripts/build_results_table.py
           python scripts/build_finding3_table.py
+          python scripts/audit_question_relevance.py
 
       - name: Confirm the detection CLI is usable without torch
         run: python -m src.detection.run_detection --help

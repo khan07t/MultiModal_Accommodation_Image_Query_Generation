@@ -8,8 +8,10 @@ their permission.
 
 One exception worth noting: roughly 5% of the TV test split is public stock
 photography rather than trivago listings, including a few product shots and
-outdoor billboards. Those images are not trivago's and are not covered by the
-permission above.
+outdoor billboards. Those images are not trivago's, so they are **excluded from
+the committed sample** under `data/sample/`, which is entirely trivago-sourced.
+They remain in the full split, which is not redistributed, and are counted in the
+TV metrics.
 
 That provenance matters for reading the results. This is not a general-purpose
 object-detection benchmark reused for a hotel task. It is the actual domain the
