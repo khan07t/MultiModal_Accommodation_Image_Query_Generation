@@ -10,9 +10,11 @@ kettle, mirror, TV) in accommodation photos using OWL-ViT, with no fine-tuning.
 decision-relevant question.
 
 Evaluated on 1,531 test images, seven generation backends, and a 37-participant
-user study. The images are **real accommodation listing photographs provided by
-trivago N.V.**, hand-annotated for evaluation, not a general-purpose object
-dataset repurposed for a hotel task.
+user study. The bathtub, hairdryer, kettle and mirror images are **real
+accommodation listing photographs provided by trivago N.V.**, hand-annotated for
+evaluation. The TV set was assembled after thesis submission and mixes those with
+public stock photography, so it is the one amenity whose provenance is not
+uniform. Details in [`docs/dataset_inventory.md`](docs/dataset_inventory.md).
 
 ![Pipeline architecture](docs/architecture/pipeline.png)
 
@@ -39,13 +41,23 @@ Zero-shot detection, best F1 per amenity across a confidence sweep:
 
 | Amenity | Best prompt | Conf | F1 | Precision | Recall | mIoU |
 |:---|:---|---:|---:|---:|---:|---:|
-| TV | baseline | 0.05 | **0.836** | 0.876 | 0.799 | 0.750 |
+| TV † | baseline | 0.05 | **0.836** | 0.876 | 0.799 | 0.750 |
 | Hairdryer | variants | 0.05 | **0.808** | 0.747 | 0.881 | 0.648 |
 | Bathtub | baseline | 0.05 | **0.790** | 0.721 | 0.873 | 0.641 |
 | Mirror | baseline | 0.15 | **0.731** | 0.715 | 0.749 | 0.633 |
 | Kettle | baseline | 0.05 | **0.705** | 0.682 | 0.731 | 0.573 |
 
 <sub>Regenerate this table from the committed data: `python scripts/build_results_table.py`</sub>
+
+<sub>† TV was run after thesis submission and is the only amenity not reported in
+it. Its image set mixes trivago listings with public stock photography, so read
+it as indicative rather than on the same footing as the other four.</sub>
+
+<sub>**Selection caveat.** Prompt set and confidence threshold were both chosen
+from a sweep over the test split, so these are best-of-sweep figures and should
+be read as an optimistic upper bound. The validation splits were too small to
+select on (18 images for bathtub, 52 for mirror), which is why the full sweep is
+published rather than a single tuned number.</sub>
 
 ![Prompt set comparison for bathtub](results/figures/bathtub/prompt_comparison_full.png)
 
@@ -87,6 +99,11 @@ region to a multimodal model instead moves diversity by an order of magnitude:
 sentences. Well-formedness measures whether a question is shaped like a question;
 it cannot see that it is the *same* question 592 times. Any evaluation of
 generated questions needs a diversity term or it will report success here.
+
+They miss relevance too. Neither metric checks that a question is about the
+amenity that was detected, and 5.8% of the kettle questions mention baths, tubs
+or showers. Diversity catches repetition, not drift, so a complete evaluation
+needs a third term for on-topic-ness that this project does not have.
 
 The vision comparison is size-matched: distinct-n falls as a corpus grows, so the
 2,484 vision questions are subsampled to 1,003 to match the text-only row count,
@@ -264,10 +281,11 @@ so a question can be answered as well as asked.
 This thesis was carried out in collaboration with **trivago N.V.**, whose problem
 framing, domain guidance, and product context shaped the work.
 
-**All accommodation images in this repository were provided by trivago N.V.** and
-are reproduced with permission. They remain the property of trivago N.V. See
-[`data/sample/ATTRIBUTION.md`](data/sample/ATTRIBUTION.md), with provenance and
-dataset construction in [`docs/dataset_inventory.md`](docs/dataset_inventory.md).
+**The bathtub, hairdryer, kettle and mirror images were provided by trivago
+N.V.** and are reproduced with permission. They remain the property of trivago
+N.V. The TV set additionally contains public stock photography and is not wholly
+trivago-sourced. See [`data/sample/ATTRIBUTION.md`](data/sample/ATTRIBUTION.md)
+and [`docs/dataset_inventory.md`](docs/dataset_inventory.md).
 
 The full-scale experiments ran on internal infrastructure provided for the
 collaboration. That code and configuration are not published here; this

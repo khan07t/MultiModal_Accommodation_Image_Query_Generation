@@ -180,9 +180,14 @@ encoder. Notebook 02 shows that intuition is wrong."""),
 
         ("md", """## Where the data comes from
 
-The images are **real accommodation listing photographs provided by trivago
-N.V.**, reproduced with permission. Not a general-purpose object-detection
-benchmark repurposed for a hotel task. It is the actual domain the system targets.
+The bathtub, hairdryer, kettle and mirror images are **real accommodation
+listing photographs provided by trivago N.V.**, reproduced with permission. Not a
+general-purpose object-detection benchmark repurposed for a hotel task; the
+actual domain the system targets.
+
+The TV set is the exception. It was assembled after the thesis was submitted and
+mixes trivago listings with public stock photography, so its results are
+indicative rather than directly comparable with the other four.
 
 Building the dataset was most of the work. The inventory carries coarse room
 tags (bathroom, bedroom, kitchen) but no object-level labels, so images
@@ -782,8 +787,10 @@ Stated plainly, because it bounds everything above.
 - **Small, skewed sample.** 37 people, nearly 60% aged 18–25.
 - **Stated preference, not behaviour.** Nobody booked anything. Rating a question
   as helpful is not evidence it helps.
-- **Detection numbers come from non-accommodation photography**, so they are
-  likely an optimistic upper bound.
+- **Prompt and threshold were selected on the test split**, so the reported
+  figures are best-of-sweep and optimistic.
+- **The TV set has mixed provenance**, blending trivago listings with public
+  stock photography, and was run after thesis submission.
 - **The vision-conditioned questions were never rated at all.** The study covered
   text-only output, so the diversity gain in notebook 03 has no helpfulness
   evidence behind it."""),
