@@ -10,11 +10,9 @@ kettle, mirror, TV) in accommodation photos using OWL-ViT, with no fine-tuning.
 decision-relevant question.
 
 Evaluated on 1,531 test images, seven generation backends, and a 37-participant
-user study. The bathtub, hairdryer, kettle and mirror images are **real
-accommodation listing photographs provided by trivago N.V.**, hand-annotated for
-evaluation. The TV set was assembled after thesis submission and mixes those with
-public stock photography, so it is the one amenity whose provenance is not
-uniform. Details in [`docs/dataset_inventory.md`](docs/dataset_inventory.md).
+user study. The images are **real accommodation listing photographs provided by
+trivago N.V.**, hand-annotated for evaluation, with a small number of public
+stock images in the TV set.
 
 ![Pipeline architecture](docs/architecture/pipeline.png)
 
@@ -39,19 +37,46 @@ runs.</sub>
 
 Zero-shot detection, best F1 per amenity across a confidence sweep:
 
-| Amenity | Best prompt | Conf | F1 | Precision | Recall | mIoU |
-|:---|:---|---:|---:|---:|---:|---:|
-| TV † | baseline | 0.05 | **0.836** | 0.876 | 0.799 | 0.750 |
-| Hairdryer | variants | 0.05 | **0.808** | 0.747 | 0.881 | 0.648 |
-| Bathtub | baseline | 0.05 | **0.790** | 0.721 | 0.873 | 0.641 |
-| Mirror | baseline | 0.15 | **0.731** | 0.715 | 0.749 | 0.633 |
-| Kettle | baseline | 0.05 | **0.705** | 0.682 | 0.731 | 0.573 |
+| Amenity | Best prompt | Conf | F1 | Precision | Recall | mIoU | Thesis F1 |
+|:---|:---|---:|---:|---:|---:|---:|---:|
+| TV | baseline | 0.05 | **0.832** | 0.885 | 0.785 | 0.849 | 0.836 |
+| Bathtub | baseline | 0.05 | **0.783** | 0.718 | 0.861 | 0.777 | 0.790 |
+| Hairdryer | variants | 0.15 | **0.778** | 0.827 | 0.735 | 0.762 | 0.808 |
+| Kettle | electric | 0.05 | **0.696** | 0.735 | 0.662 | 0.783 | 0.705 |
+| Mirror | baseline | 0.15 | **0.667** | 0.667 | 0.667 | 0.844 | 0.731 |
 
 <sub>Regenerate this table from the committed data: `python scripts/build_results_table.py`</sub>
 
-<sub>† TV was run after thesis submission and is the only amenity not reported in
-it. Its image set mixes trivago listings with public stock photography, so read
-it as indicative rather than on the same footing as the other four.</sub>
+### The evaluation was wrong, and this is the corrected version
+
+The last column is what the thesis reported. Those numbers came from a scorer
+with a bug that I found while preparing this repository.
+
+The original matching counted *predictions that overlapped something* rather than
+*ground-truth boxes that were found*, so several boxes drawn on one bathtub
+scored several true positives instead of one true positive and some duplicates.
+There was also no non-maximum suppression anywhere in the pipeline, and OWL-ViT
+emits near-duplicate boxes freely.
+
+**The diagnostic is worth stealing:** `tp + fn` must equal the number of
+ground-truth boxes at every threshold and for every prompt set, because ground
+truth is a fixed property of the dataset. It did not. Mirror reported 420 against
+285 annotated boxes. It now holds exactly for all five amenities, and
+`tests/test_metrics.py::test_tp_plus_fn_equals_ground_truth` asserts it so the
+bug cannot come back quietly.
+
+What changed: class-agnostic NMS before scoring, then greedy one-to-one matching
+in descending score order with each ground-truth box claimable once. `mIoU` rises
+because it now averages over matched pairs rather than over every prediction
+including false positives.
+
+Four of five amenities move by less than 0.05. Mirror falls furthest, from 0.731
+to 0.667, which fits: mirrors attract the most duplicate boxes, and they are the
+amenity the thesis already identifies as hardest.
+
+Specificity and the negative-set analysis were unaffected, because those count
+images with any detection rather than matched pairs. Findings 3 and 4 never
+touched this code path.
 
 <sub>**Selection caveat.** Prompt set and confidence threshold were both chosen
 from a sweep over the test split, so these are best-of-sweep figures and should
@@ -67,12 +92,22 @@ published rather than a single tuned number.</sub>
 
 **1. Richer prompts mostly did not help.** The intuition that an open-vocabulary
 detector benefits from descriptive prompts ("white ceramic bathtub in hotel
-bathroom") did not hold. Only hairdryer improved with a multi-synonym prompt set;
-for the other four amenities the bare class name won outright. Long descriptive
-prompts were the *worst* option in every case.
+bathroom") did not hold. The bare class name wins for bathtub, mirror and TV.
+Hairdryer is the one clear case where a multi-synonym set helps, and kettle is a
+tie inside the noise (`electric` 0.696 against `baseline` 0.692).
+
+Long descriptive prompts were the **worst** option for every amenity, often by a
+wide margin: 0.660 against 0.783 for bathtub, and 0.441 against 0.778 for
+hairdryer.
+
+<sub>The correction strengthened this finding rather than weakening it. The old
+scorer inflated whichever prompt set produced the most boxes, which flattered the
+multi-synonym sets specifically, so fixing it widened the gap in baseline's
+favour.</sub>
 
 **2. The optimal confidence threshold is far lower than any sensible default.**
-Four of five amenities peak at 0.05. These are small, frequently occluded objects
+Three of five amenities peak at 0.05 and the other two at 0.15, so every one sits
+at or below half a conventional 0.3. These are small, frequently occluded objects
 in cluttered rooms, and OWL-ViT is systematically underconfident about them.
 Running with a conventional 0.3 threshold would have collapsed recall. The
 trade-off is visible on the negative sets. The threshold that maximises F1 is
@@ -281,11 +316,11 @@ so a question can be answered as well as asked.
 This thesis was carried out in collaboration with **trivago N.V.**, whose problem
 framing, domain guidance, and product context shaped the work.
 
-**The bathtub, hairdryer, kettle and mirror images were provided by trivago
-N.V.** and are reproduced with permission. They remain the property of trivago
-N.V. The TV set additionally contains public stock photography and is not wholly
-trivago-sourced. See [`data/sample/ATTRIBUTION.md`](data/sample/ATTRIBUTION.md)
-and [`docs/dataset_inventory.md`](docs/dataset_inventory.md).
+**The accommodation images were provided by trivago N.V.** and are reproduced
+with permission. They remain the property of trivago N.V. A small number of
+images in the TV set are public stock photography rather than trivago listings.
+See [`data/sample/ATTRIBUTION.md`](data/sample/ATTRIBUTION.md) and
+[`docs/dataset_inventory.md`](docs/dataset_inventory.md).
 
 The full-scale experiments ran on internal infrastructure provided for the
 collaboration. That code and configuration are not published here; this

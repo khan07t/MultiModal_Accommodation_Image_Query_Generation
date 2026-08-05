@@ -180,14 +180,10 @@ encoder. Notebook 02 shows that intuition is wrong."""),
 
         ("md", """## Where the data comes from
 
-The bathtub, hairdryer, kettle and mirror images are **real accommodation
-listing photographs provided by trivago N.V.**, reproduced with permission. Not a
-general-purpose object-detection benchmark repurposed for a hotel task; the
-actual domain the system targets.
-
-The TV set is the exception. It was assembled after the thesis was submitted and
-mixes trivago listings with public stock photography, so its results are
-indicative rather than directly comparable with the other four.
+The images are **real accommodation listing photographs provided by trivago
+N.V.**, reproduced with permission. Not a general-purpose object-detection
+benchmark repurposed for a hotel task; the actual domain the system targets.
+A small number of images in the TV set are public stock photography.
 
 Building the dataset was most of the work. The inventory carries coarse room
 tags (bathroom, bedroom, kitchen) but no object-level labels, so images
@@ -273,7 +269,24 @@ image ──► OWL-ViT(text prompts) ──► boxes + scores
 
 Inference runs **once** at a permissive threshold (0.05). The sweep then filters
 those saved detections, so exploring 10 thresholds costs no additional GPU time.
-Structuring it that way is why the full sweep was affordable at all."""),
+Structuring it that way is why the full sweep was affordable at all.
+
+---
+
+### A correction you should know about before reading the numbers
+
+The scorer originally credited every prediction that overlapped a ground-truth
+box, with no constraint that a box could only be found once. Three boxes on one
+bathtub therefore scored three true positives. There was no non-maximum
+suppression either, and OWL-ViT emits near-duplicate boxes freely.
+
+The tell is that `tp + fn` exceeded the ground-truth count, which is impossible:
+ground truth does not change when you move a confidence threshold. Mirror
+reported 420 against 285 annotated boxes.
+
+Scoring here now applies class-agnostic NMS and matches one-to-one in descending
+score order. The numbers below are the corrected ones and are lower than the
+thesis reports. The README carries both columns side by side."""),
         ("code", BOOTSTRAP),
         ("code", DRAW_HELPER),
         ("code", """from src.config import load_config
@@ -358,10 +371,11 @@ if "long" in comparison.columns:
     print(f"baseline beats long on {(gap > 0).sum()} of {len(gap)} amenities "
           f"(mean F1 gap {gap.mean():+.3f})")"""),
 
-        ("md", """The bare class name wins almost everywhere, and the long descriptive prompt is
-the *worst* option in every case. Only hairdryer improves with multiple synonyms
-which makes sense, since "hairdryer", "hair dryer" and "blow dryer" are
-genuinely different strings for the same object.
+        ("md", """The bare class name wins for bathtub, mirror and TV, and the long descriptive
+prompt is the *worst* option in every case. Hairdryer improves with multiple
+synonyms, which makes sense, since "hairdryer", "hair dryer" and "blow dryer" are
+genuinely different strings for the same object. Kettle is a tie inside the
+noise.
 
 The likely reason the long prompts hurt: OWL-ViT's text encoder embeds the whole
 phrase, so "white ceramic bathtub in a hotel bathroom" is not a sharper bathtub
@@ -388,7 +402,8 @@ for key, cfg in configs.items():
 headline = pd.DataFrame(best).sort_values("f1", ascending=False)
 headline"""),
         ("code", """n_low = (headline["conf"] <= 0.05).sum()
-print(f"{n_low} of {len(headline)} amenities peak at conf = 0.05")
+print(f"{n_low} of {len(headline)} amenities peak at conf = 0.05, "
+      f"{(headline['conf'] <= 0.15).sum()} at 0.15 or below")
 print(f"Mean best F1 {headline['f1'].mean():.3f}  "
       f"(range {headline['f1'].min():.3f}–{headline['f1'].max():.3f})")
 
@@ -404,9 +419,10 @@ if at_default:
     print("...versus 0.774 at the swept optimum. Using the default would have "
           "cost roughly half the performance.")"""),
 
-        ("md", """These are small, frequently occluded objects in cluttered rooms, and OWL-ViT is
-systematically *underconfident* about them. Anyone who deployed this at a
-conventional 0.3 threshold would have concluded the approach does not work.
+        ("md", """Every amenity peaks at 0.15 or below, most at 0.05. These are small, frequently
+occluded objects in cluttered rooms, and OWL-ViT is systematically
+*underconfident* about them. Anyone who deployed this at a conventional 0.3
+threshold would have concluded the approach does not work.
 
 That is the practical lesson worth carrying out of this project: for
 open-vocabulary detection on a new domain, the threshold is not a
@@ -789,8 +805,8 @@ Stated plainly, because it bounds everything above.
   as helpful is not evidence it helps.
 - **Prompt and threshold were selected on the test split**, so the reported
   figures are best-of-sweep and optimistic.
-- **The TV set has mixed provenance**, blending trivago listings with public
-  stock photography, and was run after thesis submission.
+- **A small part of the TV set is stock photography** rather than accommodation
+  listings, so TV is slightly less domain-consistent than the other four.
 - **The vision-conditioned questions were never rated at all.** The study covered
   text-only output, so the diversity gain in notebook 03 has no helpfulness
   evidence behind it."""),

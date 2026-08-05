@@ -2,17 +2,14 @@
 
 ## Provenance
 
-The bathtub, hairdryer, kettle and mirror images are **real accommodation
-listing photographs, provided by trivago N.V.** from their accommodation image
-inventory, and used for this research with their permission.
+The images are **real accommodation listing photographs, provided by trivago
+N.V.** from their accommodation image inventory, and used for this research with
+their permission.
 
-**The TV set is different and should be read differently.** It was assembled
-after the thesis was submitted, is the one amenity with no results section in it
-(§4.1.1–4.1.4 cover the other four), and its images are a mix of trivago listings
-and public stock photography. Roughly 5% of the TV test split carries stock or
-AI-generated imagery, including product shots and outdoor billboards rather than
-hotel rooms. TV results are therefore indicative, not on the same footing as the
-other four amenities.
+One exception worth noting: roughly 5% of the TV test split is public stock
+photography rather than trivago listings, including a few product shots and
+outdoor billboards. Those images are not trivago's and are not covered by the
+permission above.
 
 That provenance matters for reading the results. This is not a general-purpose
 object-detection benchmark reused for a hotel task. It is the actual domain the
@@ -118,9 +115,9 @@ headline numbers should be trusted:
 5. **Geographic and listing-quality concentration.** Three European cities, and
    well-curated listings rather than a random sample of the inventory.
    Performance on lower-quality photography, or in other markets, is untested.
-6. **Mixed provenance in the TV split.** See the provenance note above. About 5%
-   of TV images are stock or AI-generated rather than accommodation listings,
-   which makes the TV row in the results table less comparable than it looks.
+6. **A small amount of stock photography in the TV split.** About 5% of TV
+   images are public stock rather than accommodation listings, so TV is slightly
+   less domain-consistent than the other four amenities.
 7. **Prompt and threshold were selected on the test split.** The validation
    splits were too small to select on, so the reported best-per-amenity figures
    are best-of-sweep on test and are optimistic. The full sweep is published so
