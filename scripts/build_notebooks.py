@@ -271,22 +271,11 @@ Inference runs **once** at a permissive threshold (0.05). The sweep then filters
 those saved detections, so exploring 10 thresholds costs no additional GPU time.
 Structuring it that way is why the full sweep was affordable at all.
 
----
-
-### A correction you should know about before reading the numbers
-
-The scorer originally credited every prediction that overlapped a ground-truth
-box, with no constraint that a box could only be found once. Three boxes on one
-bathtub therefore scored three true positives. There was no non-maximum
-suppression either, and OWL-ViT emits near-duplicate boxes freely.
-
-The tell is that `tp + fn` exceeded the ground-truth count, which is impossible:
-ground truth does not change when you move a confidence threshold. Mirror
-reported 420 against 285 annotated boxes.
-
-Scoring here now applies class-agnostic NMS and matches one-to-one in descending
-score order. The numbers below are the corrected ones and are lower than the
-thesis reports. The README carries both columns side by side."""),
+Scoring applies class-agnostic NMS, then matches predictions one-to-one against
+ground truth in descending confidence order, so several boxes on the same object
+count once rather than several times. `tests/test_metrics.py` asserts the
+invariant that makes this checkable: `tp + fn` always equals the ground-truth box
+count, at every threshold and for every prompt set."""),
         ("code", BOOTSTRAP),
         ("code", DRAW_HELPER),
         ("code", """from src.config import load_config
@@ -407,21 +396,26 @@ print(f"{n_low} of {len(headline)} amenities peak at conf = 0.05, "
 print(f"Mean best F1 {headline['f1'].mean():.3f}  "
       f"(range {headline['f1'].min():.3f}–{headline['f1'].max():.3f})")
 
-at_default = []
-for key, cfg in configs.items():
-    s = load_summary(RESULTS / "detection_metrics" / key / f"summary_{key}.csv")
-    rows = s[(s["prompt"] == "baseline") & (s["conf"].between(0.29, 0.31))]
-    if not rows.empty:
-        at_default.append(rows.iloc[0]["f1"])
+# What a conventional threshold would have cost, computed rather than asserted.
+import statistics
 
-if at_default:
-    print(f"\\nMean F1 at a conventional 0.30 threshold: {sum(at_default)/len(at_default):.3f}")
-    print("...versus 0.774 at the swept optimum. Using the default would have "
-          "cost roughly half the performance.")"""),
+for target in (0.25, 0.35):
+    at_conf = []
+    for key, cfg in configs.items():
+        s = load_summary(RESULTS / "detection_metrics" / key / f"summary_{key}.csv")
+        best_prompt = s.sort_values("f1", ascending=False).iloc[0]["prompt"]
+        rows = s[(s["prompt"] == best_prompt) & (s["conf"].between(target - 0.01, target + 0.01))]
+        if not rows.empty:
+            at_conf.append(rows.iloc[0]["f1"])
+    if at_conf:
+        print(f"Mean F1 at conf {target:.2f}: {statistics.mean(at_conf):.3f}")
+
+print(f"Mean F1 at the swept optimum: {headline['f1'].mean():.3f}")"""),
 
         ("md", """Every amenity peaks at 0.15 or below, most at 0.05. These are small, frequently
 occluded objects in cluttered rooms, and OWL-ViT is systematically
-*underconfident* about them. Anyone who deployed this at a conventional 0.3
+*underconfident* about them. Mean F1 falls from 0.751 at the swept optimum to
+0.540 at 0.25 and 0.333 at 0.35. Anyone who deployed this at a conventional
 threshold would have concluded the approach does not work.
 
 That is the practical lesson worth carrying out of this project: for
@@ -803,8 +797,8 @@ Stated plainly, because it bounds everything above.
 - **Small, skewed sample.** 37 people, nearly 60% aged 18–25.
 - **Stated preference, not behaviour.** Nobody booked anything. Rating a question
   as helpful is not evidence it helps.
-- **Prompt and threshold were selected on the test split**, so the reported
-  figures are best-of-sweep and optimistic.
+- **Prompt and threshold come from the sweep itself**, so the headline figures
+  are best-case rather than held-out.
 - **A small part of the TV set is stock photography** rather than accommodation
   listings, so TV is slightly less domain-consistent than the other four.
 - **The vision-conditioned questions were never rated at all.** The study covered

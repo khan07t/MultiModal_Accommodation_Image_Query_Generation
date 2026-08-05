@@ -23,7 +23,7 @@ jobs:
       - name: Install pandas only
         run: |
           python -m pip install --upgrade pip
-          pip install pandas pyyaml tabulate
+          pip install pandas pyyaml tabulate pytest
 
       - name: Confirm the heavy dependencies really are absent
         run: |
@@ -45,6 +45,12 @@ jobs:
 
       - name: Confirm the detection CLI is usable without torch
         run: python -m src.detection.run_detection --help
+
+      # The evaluation path is pure NumPy, so the whole suite runs here too.
+      # If a torch import creeps back into src/detection/metrics.py this fails
+      # while the full job below still passes.
+      - name: Run the test suite without a deep-learning stack
+        run: pytest tests/ -q
 
   test:
     runs-on: ubuntu-latest

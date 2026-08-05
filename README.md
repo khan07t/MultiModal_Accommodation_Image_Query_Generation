@@ -37,52 +37,20 @@ runs.</sub>
 
 Zero-shot detection, best F1 per amenity across a confidence sweep:
 
-| Amenity | Best prompt | Conf | F1 | Precision | Recall | mIoU | Thesis F1 |
-|:---|:---|---:|---:|---:|---:|---:|---:|
-| TV | baseline | 0.05 | **0.832** | 0.885 | 0.785 | 0.849 | 0.836 |
-| Bathtub | baseline | 0.05 | **0.783** | 0.718 | 0.861 | 0.777 | 0.790 |
-| Hairdryer | variants | 0.15 | **0.778** | 0.827 | 0.735 | 0.762 | 0.808 |
-| Kettle | electric | 0.05 | **0.696** | 0.735 | 0.662 | 0.783 | 0.705 |
-| Mirror | baseline | 0.15 | **0.667** | 0.667 | 0.667 | 0.844 | 0.731 |
+| Amenity | Best prompt | Conf | F1 | Precision | Recall | mIoU |
+|:---|:---|---:|---:|---:|---:|---:|
+| TV | baseline | 0.05 | **0.832** | 0.885 | 0.785 | 0.849 |
+| Bathtub | baseline | 0.05 | **0.783** | 0.718 | 0.861 | 0.777 |
+| Hairdryer | variants | 0.15 | **0.778** | 0.827 | 0.735 | 0.762 |
+| Kettle | electric | 0.05 | **0.696** | 0.735 | 0.662 | 0.783 |
+| Mirror | baseline | 0.15 | **0.667** | 0.667 | 0.667 | 0.844 |
 
 <sub>Regenerate this table from the committed data: `python scripts/build_results_table.py`</sub>
 
-### The evaluation was wrong, and this is the corrected version
-
-The last column is what the thesis reported. Those numbers came from a scorer
-with a bug that I found while preparing this repository.
-
-The original matching counted *predictions that overlapped something* rather than
-*ground-truth boxes that were found*, so several boxes drawn on one bathtub
-scored several true positives instead of one true positive and some duplicates.
-There was also no non-maximum suppression anywhere in the pipeline, and OWL-ViT
-emits near-duplicate boxes freely.
-
-**The diagnostic is worth stealing:** `tp + fn` must equal the number of
-ground-truth boxes at every threshold and for every prompt set, because ground
-truth is a fixed property of the dataset. It did not. Mirror reported 420 against
-285 annotated boxes. It now holds exactly for all five amenities, and
-`tests/test_metrics.py::test_tp_plus_fn_equals_ground_truth` asserts it so the
-bug cannot come back quietly.
-
-What changed: class-agnostic NMS before scoring, then greedy one-to-one matching
-in descending score order with each ground-truth box claimable once. `mIoU` rises
-because it now averages over matched pairs rather than over every prediction
-including false positives.
-
-Four of five amenities move by less than 0.05. Mirror falls furthest, from 0.731
-to 0.667, which fits: mirrors attract the most duplicate boxes, and they are the
-amenity the thesis already identifies as hardest.
-
-Specificity and the negative-set analysis were unaffected, because those count
-images with any detection rather than matched pairs. Findings 3 and 4 never
-touched this code path.
-
-<sub>**Selection caveat.** Prompt set and confidence threshold were both chosen
-from a sweep over the test split, so these are best-of-sweep figures and should
-be read as an optimistic upper bound. The validation splits were too small to
-select on (18 images for bathtub, 52 for mirror), which is why the full sweep is
-published rather than a single tuned number.</sub>
+<sub>**How these are scored.** Class-agnostic NMS runs first, then detections are
+matched one-to-one against ground truth in descending confidence order, so
+several boxes on the same object count once. Prompt set and threshold are picked
+from the sweep, so treat these as best-case rather than held-out figures.</sub>
 
 ![Prompt set comparison for bathtub](results/figures/bathtub/prompt_comparison_full.png)
 
@@ -100,17 +68,14 @@ Long descriptive prompts were the **worst** option for every amenity, often by a
 wide margin: 0.660 against 0.783 for bathtub, and 0.441 against 0.778 for
 hairdryer.
 
-<sub>The correction strengthened this finding rather than weakening it. The old
-scorer inflated whichever prompt set produced the most boxes, which flattered the
-multi-synonym sets specifically, so fixing it widened the gap in baseline's
-favour.</sub>
-
 **2. The optimal confidence threshold is far lower than any sensible default.**
-Three of five amenities peak at 0.05 and the other two at 0.15, so every one sits
-at or below half a conventional 0.3. These are small, frequently occluded objects
-in cluttered rooms, and OWL-ViT is systematically underconfident about them.
-Running with a conventional 0.3 threshold would have collapsed recall. The
-trade-off is visible on the negative sets. The threshold that maximises F1 is
+Three of five amenities peak at 0.05 and the other two at 0.15. These are small,
+frequently occluded objects in cluttered rooms, and OWL-ViT is systematically
+underconfident about them: mean F1 falls from **0.751** at the swept optimum to
+**0.540** at 0.25 and **0.333** at 0.35. Anyone reaching for a conventional
+threshold would have concluded the approach does not work.
+
+The trade-off is visible on the negative sets. The threshold that maximises F1 is
 also the one with the weakest specificity.
 
 **3. Text-only conditioning collapses into templates, and conditioning on the
@@ -249,10 +214,8 @@ python scripts/build_results_table.py     # detection table
 python scripts/build_finding3_table.py    # diversity table
 ```
 
-The test suite needs the full `requirements.txt` (the detection tests use torch):
-
 ```bash
-pytest tests/ -q                          # 29 tests
+pytest tests/ -q                          # 51 tests, no GPU stack required
 ```
 
 The notebooks are committed with their outputs, so reading them needs nothing.

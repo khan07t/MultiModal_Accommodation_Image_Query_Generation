@@ -109,9 +109,9 @@ headline numbers should be trusted:
    category appears in several exports and is stripped during preparation; images
    labelled `none` are retained as the negative set.
 4. **Annotation tightness varies.** Boxes were drawn by hand across sessions.
-   Some hug the object, others include surrounding fixtures. This caps achievable
-   IoU independently of detector quality, and is part of why mean IoU
-   (0.573–0.750) sits well below F1.
+   Some hug the object, others include surrounding fixtures, which caps
+   achievable IoU independently of how good the detector is. Mean IoU over
+   matched pairs runs 0.762 to 0.849.
 5. **Geographic and listing-quality concentration.** Three European cities, and
    well-curated listings rather than a random sample of the inventory.
    Performance on lower-quality photography, or in other markets, is untested.
