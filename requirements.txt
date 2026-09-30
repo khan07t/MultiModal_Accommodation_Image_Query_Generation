@@ -1,0 +1,14 @@
+# notebooks and analysis
+numpy
+pandas
+matplotlib
+pillow
+jupyter
+
+# only needed to re-run the model steps
+torch
+transformers
+google-genai
+sentence-transformers
+scikit-learn
+bert-score
