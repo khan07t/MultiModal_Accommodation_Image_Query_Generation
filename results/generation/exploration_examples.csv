@@ -1,0 +1,7 @@
+stage,model,input,question
+1 · text only,Flan-T5 Base,"detection summary (label, confidence, prompt type)",What type of amenity does a bathtub have?
+1 · text only,Flan-T5 Large,"detection summary (label, confidence, prompt type)",What is the name of the hotel's bathtub?
+2 · captioning,BLIP-2,cropped image,Is the bathtub with a toilet in a small bathroom?
+2 · captioning,BLIP-2,cropped image,Does the bathtub have a shower and toilet?
+3 · instruction-tuned,Gemini 3.0 Pro,cropped image + task prompt,Does the bathroom layout include both a bathtub and a separate walk-in shower?
+3 · instruction-tuned,Gemini 3.0 Pro,cropped image + task prompt,Does the bathtub appear deep enough for a comfortable full-body soak?

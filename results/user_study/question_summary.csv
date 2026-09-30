@@ -1,0 +1,76 @@
+amenity,image,question_no,question,mean,std,n
+bathtub,1,1,Does the bathroom layout include both a bathtub and a separate walk-in shower?,3.7027027027027026,1.488191760061422,37
+bathtub,1,2,Are accessibility features like grab bars and transfer benches standard in this room?,3.4594594594594597,1.483138462753798,37
+bathtub,1,3,Is there a handheld shower wand attached to the bathtub fixtures?,3.6486486486486487,1.619605854250695,37
+bathtub,1,4,Does the bathtub appear deep enough for a comfortable full-body soak?,3.6216216216216215,1.4014149863491414,37
+bathtub,1,5,Do the floor tiles in the shower area appear to be textured for slip resistance?,3.3783783783783785,1.5156837721956709,37
+bathtub,2,1,Is the bathtub a full-sized standard tub or a compact model?,3.4324324324324325,1.4051599462247972,37
+bathtub,2,2,Does the glass partition effectively act as a shower screen?,3.108108108108108,1.3901195748684472,37
+bathtub,2,3,Are there grab bars installed on the wall for safety and accessibility?,2.891891891891892,1.5235883044055312,37
+bathtub,2,4,Do the bathroom tiles and fixtures appear modern or somewhat dated?,2.7567567567567566,1.320887862289886,37
+bathtub,2,5,"Is the tub deep enough for a comfortable, relaxing soak?",3.6486486486486487,1.274018494027117,37
+bathtub,3,1,Is there a separate walk-in shower in addition to the soaking tub?,3.864864864864865,1.3976599920772768,37
+bathtub,3,2,Does the bathtub feature a built-in headrest for added comfort while soaking?,3.6216216216216215,1.361195376444121,37
+bathtub,3,3,Is the vanity area equipped with dual sinks to accommodate two people at once?,3.5675675675675675,1.4247912233130966,37
+bathtub,3,4,Does the tub appear deep enough for a full-body soak?,3.7567567567567566,1.40248599528372,37
+bathtub,3,5,Are the bathroom finishes made of high-quality stone or marble?,3.2972972972972974,1.5250658431116428,37
+hairdryer,1,1,"Is the hairdryer permanently wall-mounted, limiting where I can dry my hair?",3.6216216216216215,1.3406331702957737,37
+hairdryer,1,2,Does the compact size suggest it might lack the power needed for thick or long hair?,3.4054054054054053,1.3633997428703215,37
+hairdryer,1,3,Will the coiled cord stretch far enough to reach the bathroom mirror comfortably?,3.6216216216216215,1.2099437854561526,37
+hairdryer,1,4,Does the switch on the handle offer multiple heat or speed settings?,3.72972972972973,1.216749966295656,37
+hairdryer,1,5,"Is this a basic economy model, implying I should pack my own personal hairdryer for better quality?",3.5945945945945947,1.3633997428703217,37
+hairdryer,2,1,"Is the hairdryer wall-mounted, restricting usage to just the bathroom area?",3.324324324324324,1.4539993514833887,37
+hairdryer,2,2,Does the 1600-watt power indicated on the label provide enough strength for drying thick hair quickly?,3.4324324324324325,1.3237266531471867,37
+hairdryer,2,3,Does the coiled cord appear to have enough stretch to allow for comfortable movement while styling?,3.5945945945945947,1.1657010160666665,37
+hairdryer,2,4,"Is this a basic standard model, suggesting I should pack my own dryer for professional results?",3.4054054054054053,1.3633997428703215,37
+hairdryer,2,5,Does the dryer come with any visible attachments like a concentrator nozzle or diffuser?,3.324324324324324,1.472979860578436,37
+hairdryer,3,1,Is the hairdryer a portable handheld model rather than a fixed wall-mounted unit?,3.1621621621621623,1.59013475168884,37
+hairdryer,3,2,Does the 1875 wattage rating mean it is powerful enough to dry thick hair quickly?,3.3513513513513513,1.3987338762096444,37
+hairdryer,3,3,Does the dryer have a folding handle to save space on the bathroom counter?,2.8378378378378377,1.4816191127260727,37
+hairdryer,3,4,"Are there any attachments included, such as a concentrator nozzle or diffuser?",3.2432432432432434,1.4982472241738827,37
+hairdryer,3,5,Does it offer variable speed and heat settings or just a simple on/off switch?,3.5135135135135136,1.2828272080236083,37
+kettle,1,1,Is the kettle made of stainless steel rather than plastic?,3.5405405405405403,1.4831384627537982,37
+kettle,1,2,Does it appear to be a full-sized kettle capable of boiling enough water for multiple cups?,3.7837837837837838,1.2502252049383193,37
+kettle,1,3,Is the kettle positioned near an accessible power outlet for easy use?,3.6486486486486487,1.418454092317412,37
+kettle,1,4,"Are there matching canisters for tea, coffee, or sugar visible next to the kettle?",3.108108108108108,1.4678741957860881,37
+kettle,1,5,"Does the appliance look modern and in good, clean condition?",4.081081081081081,0.9243129093301439,37
+kettle,2,1,Is there a premium coffee machine available in addition to the standard electric kettle?,3.054054054054054,1.4131514416356787,37
+kettle,2,2,Does the kettle appear to be a high-quality stainless steel model rather than plastic?,3.3783783783783785,1.4014149863491416,37
+kettle,2,3,Is there enough counter space provided to comfortably prepare hot drinks?,3.6486486486486487,1.3584348881508252,37
+kettle,2,4,Are there accessible power outlets immediately available at the beverage station?,3.810810810810811,1.3506755066722445,37
+kettle,2,5,Does the kettle have a large enough capacity to boil water for multiple cups at once?,3.675675675675676,1.313478292635712,37
+kettle,3,1,Does the kettle appear to be full-sized or a smaller compact model?,3.2162162162162162,1.3567758992703405,37
+kettle,3,2,Is the appliance made of plastic or stainless steel?,3.1621621621621623,1.6417049659409557,37
+kettle,3,3,Is there a visible water level window to check contents easily?,3.2432432432432434,1.5882451078226316,37
+kettle,3,4,Does the presence of a blender suggest a kitchenette is included?,3.324324324324324,1.4539993514833884,37
+kettle,3,5,Is there enough counter space around the kettle for preparing drinks?,3.081081081081081,1.4019505930900227,37
+mirror,1,1,Is the overhead lighting bright enough for detailed tasks like applying makeup or shaving?,3.4864864864864864,1.3868754174126179,37
+mirror,1,2,Is the mirror wide enough for two people to get ready at the same time?,3.324324324324324,1.4347677716475786,37
+mirror,1,3,"Since this appears to be a standard mirror, is a separate magnifying mirror provided for close-up grooming?",2.810810810810811,1.4688967484672497,37
+mirror,1,4,Are there electrical outlets conveniently located near the mirror for plugging in hair styling tools?,3.4864864864864864,1.3666996260582893,37
+mirror,1,5,Does the mirror have any anti-fog features to keep it clear after a hot shower?,3.2162162162162162,1.5117160068231352,37
+mirror,2,1,Is the integrated LED lighting bright enough for detailed tasks like makeup application or shaving?,3.6216216216216215,1.3406331702957737,37
+mirror,2,2,Does the mirror feature a heated anti-fog mechanism to keep the glass clear after a hot shower?,3.4324324324324325,1.3025731060852963,37
+mirror,2,3,Is the mirror wide enough for two people to stand side-by-side and get ready simultaneously?,3.5405405405405403,1.34566370643293,37
+mirror,2,4,"Is there an additional magnifying mirror available, since this main unit appears to be a standard flat surface?",3.054054054054054,1.5265419517099195,37
+mirror,2,5,Does the backlit border design provide shadow-free illumination that is flattering for grooming?,2.7837837837837838,1.4745081126172803,37
+mirror,3,1,Does the overhead light fixture provide sufficient brightness for detailed grooming tasks like shaving or makeup application?,3.2162162162162162,1.2502252049383193,37
+mirror,3,2,Is the glass shelf attached to the bottom of the mirror sturdy and spacious enough to hold my daily toiletries?,3.189189189189189,1.3299506640356134,37
+mirror,3,3,"Is the mirror wide enough to provide a comfortable view, or does it feel narrow and cramped?",3.1621621621621623,1.3019966187341636,37
+mirror,3,4,Does the mirror fog up quickly when the nearby shower (visible in the reflection) is in use?,3.027027027027027,1.4622373740737644,37
+mirror,3,5,"Since this appears to be a standard flat mirror, is a separate magnifying mirror provided for close-up needs?",2.918918918918919,1.516179012781406,37
+tv,1,1,What is the approximate screen size of this flat-screen TV?,3.4594594594594597,1.1689167491170473,37
+tv,1,2,Does the TV have smart capabilities for streaming apps like Netflix or YouTube?,4.027027027027027,1.2580073857424614,37
+tv,1,3,Is the wall mount adjustable to tilt or swivel the screen for better viewing angles?,3.27027027027027,1.4072954488949647,37
+tv,1,4,Are the HDMI ports easily accessible for connecting personal devices like a laptop?,3.5675675675675675,1.4051599462247972,37
+tv,1,5,Is the TV positioned at a comfortable height for watching from the bed?,3.4594594594594597,1.238157111611056,37
+tv,2,1,Does the TV mount allow the screen to swivel for viewing from different parts of the room?,2.945945945945946,1.580188911806749,37
+tv,2,2,What is the approximate screen size of the television?,3.5945945945945947,1.0918755387827825,37
+tv,2,3,Is this a Smart TV that allows guests to log into their own streaming accounts?,3.918918918918919,1.139648541787686,37
+tv,2,4,Are the HDMI or USB ports easily accessible for connecting personal devices like a laptop?,3.7567567567567566,1.320887862289886,37
+tv,2,5,Is the TV positioned at a comfortable height for viewing from the bed?,3.4054054054054053,1.3633997428703215,37
+tv,3,1,"Is this a ""Frame"" style TV that displays artwork when not in use?",2.189189189189189,1.4110248016923694,37
+tv,3,2,What is the approximate screen size of this wall-mounted unit?,3.2162162162162162,1.2722494325479647,37
+tv,3,3,Is the TV positioned at a comfortable height for viewing from the bed?,3.2432432432432434,1.382538032537048,37
+tv,3,4,Is the white border a digital display effect or a physical part of the frame?,2.2162162162162162,1.3770970904029955,37
+tv,3,5,Does the screen have a matte finish to reduce glare from room lighting?,2.8378378378378377,1.4627507100116686,37

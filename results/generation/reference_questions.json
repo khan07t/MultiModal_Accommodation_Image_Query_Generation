@@ -1,0 +1,37 @@
+{
+  "bathtub": [
+    "Is there a bathtub or just a shower?",
+    "Can you actually stretch out and relax in the tub?",
+    "Does the tub have jets or anything fancy?",
+    "Is the bathtub clean and modern looking?",
+    "Is there space near the tub to keep your stuff like soap or shampoo?"
+  ],
+  "tv": [
+    "Can I watch Netflix or stream stuff on the TV?",
+    "Is the TV big enough to see from the bed?",
+    "Is it on the wall or sitting on a table?",
+    "Can I plug in my laptop or device easily?",
+    "Is it a good quality TV or kind of old?"
+  ],
+  "kettle": [
+    "Is there a kettle in the room to make tea or coffee?",
+    "Can it make more than one cup at a time?",
+    "Does the kettle have any settings or is it just on/off?",
+    "Do they give you tea bags or coffee with it?",
+    "Is it a decent kettle or just something basic?"
+  ],
+  "hairdryer": [
+    "Do they give you a hairdryer in the room?",
+    "Is it strong enough or just one of those weak ones?",
+    "Does it have heat settings or just one speed?",
+    "Can you use it easily near a mirror?",
+    "Does it come with any attachments like a diffuser?"
+  ],
+  "mirror": [
+    "Is there a full-length mirror in the room?",
+    "Is the bathroom mirror good for doing makeup or shaving?",
+    "Do they have a small magnifying mirror?",
+    "Is there enough light near the mirror?",
+    "Does the mirror fog up after a shower?"
+  ]
+}

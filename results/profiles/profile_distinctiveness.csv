@@ -1,0 +1,16 @@
+amenity,pair,similarity,distinctiveness
+bathtub,single_vs_couple,0.50396657,0.4960334300994873
+bathtub,single_vs_group,0.3882724,0.6117275953292847
+bathtub,couple_vs_group,0.3867539,0.6132461130619049
+tv,single_vs_couple,0.4346944,0.5653055906295776
+tv,single_vs_group,0.34548312,0.654516875743866
+tv,couple_vs_group,0.39648423,0.6035157740116119
+hairdryer,single_vs_couple,0.32115248,0.6788475215435028
+hairdryer,single_vs_group,0.29016376,0.7098362445831299
+hairdryer,couple_vs_group,0.27493536,0.7250646352767944
+mirror,single_vs_couple,0.38597405,0.6140259504318237
+mirror,single_vs_group,0.35520217,0.6447978317737579
+mirror,couple_vs_group,0.43084967,0.5691503286361694
+kettle,single_vs_couple,0.38431722,0.6156827807426453
+kettle,single_vs_group,0.30098695,0.6990130543708801
+kettle,couple_vs_group,0.3479303,0.6520696878433228

@@ -1,0 +1,16 @@
+model,amenity,questions,fallbacks,rate
+Gemini 2.5 Flash,bathtub,1380,214,15.507246376811594
+Gemini 2.5 Flash,kettle,915,40,4.371584699453552
+Gemini 2.5 Flash,hairdryer,1005,21,2.08955223880597
+Gemini 2.5 Flash,mirror,3135,440,14.035087719298245
+Gemini 2.5 Flash,tv,1335,18,1.348314606741573
+Gemini 2.5 Pro,bathtub,1380,171,12.391304347826088
+Gemini 2.5 Pro,kettle,915,41,4.48087431693989
+Gemini 2.5 Pro,hairdryer,1005,38,3.781094527363184
+Gemini 2.5 Pro,mirror,3135,516,16.45933014354067
+Gemini 2.5 Pro,tv,1335,14,1.048689138576779
+Gemini 3.0 Pro Preview,bathtub,1380,156,11.304347826086957
+Gemini 3.0 Pro Preview,kettle,915,78,8.524590163934427
+Gemini 3.0 Pro Preview,hairdryer,1005,26,2.5870646766169156
+Gemini 3.0 Pro Preview,mirror,3135,341,10.87719298245614
+Gemini 3.0 Pro Preview,tv,1335,9,0.6741573033707865
